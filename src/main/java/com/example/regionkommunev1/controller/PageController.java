@@ -98,6 +98,9 @@ public class PageController {
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "kode,desc") String[] sort) {
 
+          //http://localhost:8080/kommunepagesort?sort=kode,desc
+          //http://localhost:8080/kommunepagesort?page=1&size=10&sort=kode,desc
+
         List<Sort.Order> orders = new ArrayList<>();
         if (sort[0].contains(",")) {
             for (String sortOrder: sort) {
