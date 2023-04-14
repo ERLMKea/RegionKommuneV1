@@ -47,8 +47,20 @@ public class PageController {
         return new ResponseEntity<>(lstCounties, HttpStatus.OK);
     }
 
+    @GetMapping("/k4")
+    public ResponseEntity<Map<String, String>> getparm(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
 
-    @GetMapping("/kommunepageparm")
+        System.out.println("page=" + page);
+        System.out.println("size=" + size);
+        Map<String, String> response = new HashMap<>();
+        response.put("page", ""+page);
+        response.put("size", ""+size);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+        @GetMapping("/kommunepageparm")
     public ResponseEntity<Map<String, Object>> getPageOfKommuner(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
