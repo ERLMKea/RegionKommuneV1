@@ -1,5 +1,6 @@
 package com.example.regionkommunev1.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,8 +9,17 @@ public class Kommune {
     @Id
     @Column(length = 4)
     private String kode;
+    @JsonProperty("navn")
     private String name;
     private String href;
+
+    public Kommune() {
+    }
+
+    public Kommune(String kode, String name) {
+        this.kode = kode;
+        this.name = name;
+    }
 
     public String getKode() {
         return kode;

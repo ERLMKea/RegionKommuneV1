@@ -19,27 +19,28 @@ public class InitData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Region reg = new Region();
-        reg.setKode("0001");
-        reg.setName("Hovedstaden");
-        reg.setHref("hoved.dk");
-        regionRepository.save(reg);
+        if (3>4) {
+            Region reg = new Region();
+            reg.setKode("0001");
+            reg.setName("Hovedstaden");
+            reg.setHref("hoved.dk");
+            regionRepository.save(reg);
 
-        Kommune kom = new Kommune();
-        kom.setKode("0001");
-        kom.setName("Roskilde");
-        kom.setHref("roskilde.dk");
+            Kommune kom = new Kommune();
+            kom.setKode("0001");
+            kom.setName("Roskilde");
+            kom.setHref("roskilde.dk");
 
-        kom.setRegion(reg);
-        kommuneRepository.save(kom);
+            kom.setRegion(reg);
+            kommuneRepository.save(kom);
 
-        kom = new Kommune();
-        kom.setKode("0002");
-        kom.setName("Roskildex");
-        kom.setHref("roskildex.dk");
-        kom.setRegion(reg);
-        kommuneRepository.save(kom);
-
+            kom = new Kommune();
+            kom.setKode("0002");
+            kom.setName("Roskildex");
+            kom.setHref("roskildex.dk");
+            kom.setRegion(reg);
+            kommuneRepository.save(kom);
+        }
 
     }
 }

@@ -1,6 +1,7 @@
 package com.example.regionkommunev1.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -13,6 +14,7 @@ public class Region {
     @Id
     @Column(length = 4)
     private String kode;
+    @JsonProperty("navn")
     private String name;
     private String href;
 

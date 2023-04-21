@@ -62,7 +62,7 @@ public class PageController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-        @GetMapping("/kommunepageparm")
+    @GetMapping("/kommunepageparm")
     public ResponseEntity<Map<String, Object>> getPageOfKommuner(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
